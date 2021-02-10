@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import React from 'react';
+import images from './data.js';
 import './App.css';
+import Header from './components/Header.js';
+import ImageList from './components/ImageList.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+export default class App extends React.Component {
+  state = {
+    horns: '',
+  }
+  handleNumberofHorns = (e) => {
+    this.setState({
+      horns:
+        e.target.value
+    });
+  }
+  render() {
+
+    const filteredImages = images.filter((image) => {
+      if (!this.state.horns) return true;
+      if (image.horns === Number(this.state.horns)) return true;
+      return false;
+    });
+
+    return (
+
+      <div className="container">
+        <div>
+          <Header />
+        </div>
+        <div>
+          <form>
+            Select number of horns:
+            <select value={this.state.horns} onChange={(e) => {
+              this.setState({
+                horns: e.target.value
+              })
+            }}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </form>
+          <ImageList images={filteredImages} />
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
