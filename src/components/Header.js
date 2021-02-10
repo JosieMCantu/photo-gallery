@@ -6,7 +6,7 @@ export default class Header extends React.Component {
     }
     render() {
         return (
-            <header>Hello! Header</header>
+            <header>Horned Creatures</header>
         )
     }
 }
