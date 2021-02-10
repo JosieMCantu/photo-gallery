@@ -1,3 +1,8 @@
+body {
+  background-color: powderblue;
+  display: flex;
+  justify-content: center;
+}
 img {
   width: 100px;
 }
@@ -5,11 +10,27 @@ ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  background-color: plum;
+  width: 800px;
 }
 li {
   border: 1px solid black;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+}
 .creatures {
   margin: 5px;
   padding: 10px;
+  background-color: pink;
+
+}
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine;
+  font-size: 5em;
+  font-family: fantasy;
+  font-weight: bolder;
 }
