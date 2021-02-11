@@ -12,7 +12,7 @@ export default class ImageList extends React.Component {
                 image => <ImageItem image={image} key={image.title} />
             )
         return (
-            <ul>{imageList}</ul>
+            <div className="plum-div"><ul>{imageList}</ul></div>
         )
     }
 }

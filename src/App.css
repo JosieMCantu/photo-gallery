@@ -10,7 +10,6 @@ ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  background-color: plum;
   width: 800px;
 }
 li {
@@ -24,7 +23,6 @@ li {
   margin: 5px;
   padding: 10px;
   background-color: pink;
-
 }
 .header {
   display: flex;
@@ -33,4 +31,8 @@ li {
   font-size: 5em;
   font-family: fantasy;
   font-weight: bolder;
+}
+.plum-div {
+  height: 800px;
+  background-color: plum;
 }
